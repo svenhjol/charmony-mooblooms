@@ -1,0 +1,5 @@
+accessWidener v1 named
+
+accessible method net/minecraft/world/entity/animal/Bee pathfindRandomlyTowards (Lnet/minecraft/core/BlockPos;)V
+accessible method net/minecraft/world/entity/animal/Bee setHasNectar (Z)V
+accessible method net/minecraft/world/entity/LivingEntity dropFromShearingLootTable (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/world/item/ItemStack;Ljava/util/function/BiConsumer;)V
