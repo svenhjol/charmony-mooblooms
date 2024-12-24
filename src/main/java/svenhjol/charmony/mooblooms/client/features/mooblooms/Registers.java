@@ -1,9 +1,6 @@
 package svenhjol.charmony.mooblooms.client.features.mooblooms;
 
-import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.geom.builders.MeshTransformer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import svenhjol.charmony.core.base.Setup;
@@ -23,9 +20,9 @@ public final class Registers extends Setup<Mooblooms> {
             adultModel = new ModelLayerLocation(feature().id("moobloom"), "main");
             babyModel = new ModelLayerLocation(feature().id("moobloom_baby"), "main");
 
-            EntityModelLayerRegistry.registerModelLayer(adultModel, MoobloomModel::createBodyLayer);
-            EntityModelLayerRegistry.registerModelLayer(babyModel, () -> MoobloomModel.createBodyLayer().apply(MeshTransformer.scaling(0.6F)));
-            EntityRendererRegistry.register(common.registers.moobloom.get(), MoobloomRenderer::new);
+            registry.modelLayer(() -> adultModel, MoobloomModel::createBodyLayer);
+            registry.modelLayer(() -> babyModel, MoobloomModel::createBabyBodyLayer);
+            registry.entityRenderer(common.registers.moobloom, () -> MoobloomRenderer::new);
         }
     }
 

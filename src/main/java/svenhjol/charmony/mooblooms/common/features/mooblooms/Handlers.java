@@ -63,12 +63,6 @@ public final class Handlers extends Setup<Mooblooms> {
                 var out = ItemUtils.createFilledResult(held, player, stew, false);
                 player.setItemInHand(hand, out);
                 moobloom.setPollinated(false);
-
-                feature().advancements.milkedMoobloom(player);
-
-                if (MoobloomType.RARE_TYPES.contains(moobloom.getMoobloomType())) {
-                    feature().advancements.milkedRareMoobloom(player);
-                }
             }
 
             return InteractionResult.SUCCESS;

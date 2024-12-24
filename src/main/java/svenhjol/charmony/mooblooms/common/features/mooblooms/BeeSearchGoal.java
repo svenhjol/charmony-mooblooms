@@ -62,13 +62,15 @@ public class BeeSearchGoal extends Goal {
 
     @Override
     public boolean canContinueToUse() {
-        return moobloom != null && moobloom.isAlive() && moveTicks < MAX_MOVE_TICKS;
+        return moobloom != null && moobloom.isAlive() && !moobloom.isBaby() && moveTicks < MAX_MOVE_TICKS;
     }
 
     @Override
     public void tick() {
         moveTicks++;
-        if (moobloom == null || !moobloom.isAlive()) return;
+        if (moobloom == null || !moobloom.isAlive() || moobloom.isBaby()) {
+            return;
+        }
 
         if (moveTicks > MAX_MOVE_TICKS) {
             moobloom = null;
