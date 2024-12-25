@@ -3,36 +3,48 @@
   "id": "charmony-mooblooms",
   "version": "${mod_version}",
 
-  "name": "Mooblooms",
+  "name": "Charmony Mooblooms",
   "description": "Mooblooms are cow-like mobs that come in a variety of flower types. They spawn flowers where they walk and can be milked for suspicious stew.",
+
   "authors": [
-    "svenhjol"
+    "svenhjol",
+    "Coranthes"
   ],
   "icon": "assets/charmony-mooblooms/textures/gui/sprites/icon.png",
   "license": "MIT",
   "environment": "*",
   "accessWidener": "charmony-mooblooms.accesswidener",
-
   "entrypoints": {
     "main": [
-      "svenhjol.charmony.mooblooms.common.CommonInitializer"
+        "svenhjol.charmony.mooblooms.common.CommonInitializer"
     ],
     "client": [
-      "svenhjol.charmony.mooblooms.client.ClientInitializer"
+        "svenhjol.charmony.mooblooms.client.ClientInitializer"
     ]
   },
+
+  "mixins": [],
 
   "depends": {
     "fabricloader": ">=${loader_version}",
     "minecraft": "*",
-    "java": ">=21",
+    "java": ">=${java_version}",
     "fabric-api": "*",
-    "charmony": "${charmony_version}",
-    "charmony-api": "${api_version}"
+    "charmony": ">=${charmony_version}",
+    "charmony-api": ">=${api_version}"
   },
 
   "contact": {
-    "homepage": "https://charmony.work",
+    "homepage": "${homepage_link}",
     "sources": "https://github.com/svenhjol/${mod_id}"
+  },
+
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "${discord_link}"
+      },
+      "update_checker": true
+    }
   }
 }
