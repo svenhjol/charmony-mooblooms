@@ -4,8 +4,6 @@ import net.minecraft.client.renderer.entity.AgeableMobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import svenhjol.charmony.mooblooms.common.features.mooblooms.Moobloom;
-import svenhjol.charmony.mooblooms.common.features.mooblooms.MoobloomModel;
-import svenhjol.charmony.mooblooms.common.features.mooblooms.MoobloomRenderState;
 
 @SuppressWarnings("deprecation")
 public class MoobloomRenderer extends AgeableMobRenderer<Moobloom, MoobloomRenderState, MoobloomModel> {

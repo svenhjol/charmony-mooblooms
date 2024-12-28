@@ -101,7 +101,7 @@ public class Moobloom extends Cow implements Shearable {
 
     public void pollinate() {
         var level = level();
-        level.playSound(null, blockPosition(), SoundEvents.BEE_POLLINATE, SoundSource.NEUTRAL, 1.0F, 1.0F);
+        level.playSound(null, blockPosition(), SoundEvents.BEE_POLLINATE, SoundSource.NEUTRAL, 1.0f, 1.0f);
         setPollinated(true);
     }
 
@@ -131,6 +131,9 @@ public class Moobloom extends Cow implements Shearable {
 
     public void plantFlower() {
         Mooblooms.feature().handlers.plantFlower(this);
+        if (RandomSource.create().nextDouble() < 0.25f) {
+            this.setPollinated(false);
+        }
     }
 
     @Override

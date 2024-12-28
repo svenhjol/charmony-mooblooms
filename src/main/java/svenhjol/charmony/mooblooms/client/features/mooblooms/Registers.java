@@ -5,7 +5,6 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import svenhjol.charmony.core.base.Setup;
 import svenhjol.charmony.core.client.ClientRegistry;
-import svenhjol.charmony.mooblooms.common.features.mooblooms.MoobloomModel;
 
 public final class Registers extends Setup<Mooblooms> {
     public ModelLayerLocation adultModel;

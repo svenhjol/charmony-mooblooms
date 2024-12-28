@@ -13,8 +13,6 @@ import net.minecraft.world.level.block.PinkPetalsBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import svenhjol.charmony.mooblooms.common.features.mooblooms.FlowerBlockState;
-import svenhjol.charmony.mooblooms.common.features.mooblooms.MoobloomModel;
-import svenhjol.charmony.mooblooms.common.features.mooblooms.MoobloomRenderState;
 
 public class FlowerLayer extends RenderLayer<MoobloomRenderState, MoobloomModel> {
     public FlowerLayer(RenderLayerParent<MoobloomRenderState, MoobloomModel> renderLayerParent) {

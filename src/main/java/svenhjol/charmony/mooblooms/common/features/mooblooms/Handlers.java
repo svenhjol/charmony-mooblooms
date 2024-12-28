@@ -2,15 +2,12 @@ package svenhjol.charmony.mooblooms.common.features.mooblooms;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.ConversionParams;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -63,16 +60,24 @@ public final class Handlers extends Setup<Mooblooms> {
                 var out = ItemUtils.createFilledResult(held, player, stew, false);
                 player.setItemInHand(hand, out);
                 moobloom.setPollinated(false);
+
+                feature().advancements.milkedMoobloom(player);
+
+                if (MoobloomType.RARE_TYPES.contains(moobloom.getMoobloomType())) {
+                    feature().advancements.milkedRareMoobloom(player);
+                }
             }
 
             return InteractionResult.SUCCESS;
 
         } else if (held.getItem() == Items.SHEARS && moobloom.readyForShearing()) {
 
-            if (!level.isClientSide()) {
+            if (!level.isClientSide() && moobloom.isPollinated()) {
                 shear(moobloom, (ServerLevel)level, SoundSource.PLAYERS, held);
                 moobloom.gameEvent(GameEvent.SHEAR, player);
                 held.hurtAndBreak(1, player, Moobloom.getSlotForHand(hand));
+
+                feature().advancements.shearedMoobloom(player);
             }
 
             return InteractionResult.SUCCESS;
@@ -106,13 +111,10 @@ public final class Handlers extends Setup<Mooblooms> {
     public void shear(Moobloom moobloom, ServerLevel level, SoundSource soundSource, ItemStack shears) {
         level.playSound(null, moobloom, SoundEvents.MOOSHROOM_SHEAR, soundSource, 1.0f, 1.0f);
 
-        moobloom.convertTo(EntityType.COW, ConversionParams.single(moobloom, false, false), (cow) -> {
-            level.sendParticles(ParticleTypes.EXPLOSION, moobloom.getX(), moobloom.getY(0.5f), moobloom.getZ(), 1, 0.0f, 0.0f, 0.0f, 0.0f);
-
-            var flower = new ItemStack(moobloom.getMoobloomType().getFlower().getBlock());
-            for (int i = 0; i < 5; ++i) {
-                level.addFreshEntity(new ItemEntity(level, moobloom.getX(), moobloom.getY(1.0D), moobloom.getZ(), flower));
-            }
-        });
+        moobloom.setPollinated(false);
+        var flower = new ItemStack(moobloom.getMoobloomType().getFlower().getBlock());
+        for (int i = 0; i < 2; ++i) {
+            level.addFreshEntity(new ItemEntity(level, moobloom.getX(), moobloom.getY(1.0D), moobloom.getZ(), flower));
+        }
     }
 }

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2
+
+- Fix some side issues.
+- Restore advancements.
+
 ## 1.0.1
 
 - Remove advancements.

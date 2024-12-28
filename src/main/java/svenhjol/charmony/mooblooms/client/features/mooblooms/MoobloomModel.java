@@ -1,4 +1,4 @@
-package svenhjol.charmony.mooblooms.common.features.mooblooms;
+package svenhjol.charmony.mooblooms.client.features.mooblooms;
 
 import net.minecraft.client.model.CowModel;
 import net.minecraft.client.model.geom.ModelPart;
