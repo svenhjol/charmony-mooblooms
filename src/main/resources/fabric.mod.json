@@ -20,6 +20,9 @@
     ],
     "client": [
         "svenhjol.charmony.mooblooms.client.ClientInitializer"
+    ],
+    "modmenu": [
+        "svenhjol.charmony.mooblooms.integration.ModMenuPlugin"
     ]
   },
 
