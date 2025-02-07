@@ -57,7 +57,7 @@ public enum FlowerBlockState {
         } else if (this.equals(PINK_PETALS)) {
 
             return new SuspiciousStewEffects(List.of(
-                new SuspiciousStewEffects.Entry(MobEffects.HEAL, CHERRY_BLOSSOM_HEALING_DURATION * 20)
+                new SuspiciousStewEffects.Entry(MobEffects.REGENERATION, CHERRY_BLOSSOM_HEALING_DURATION * 20)
             ));
 
         }

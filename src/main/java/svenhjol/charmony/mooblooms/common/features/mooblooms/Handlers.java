@@ -19,10 +19,11 @@ import net.minecraft.world.item.context.DirectionalPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.PinkPetalsBlock;
+import net.minecraft.world.level.block.FlowerBedBlock;
 import net.minecraft.world.level.gameevent.GameEvent;
 import svenhjol.charmony.core.base.Setup;
 
+@SuppressWarnings("unused")
 public final class Handlers extends Setup<Mooblooms> {
     public Handlers(Mooblooms feature) {
         super(feature);
@@ -92,7 +93,7 @@ public final class Handlers extends Setup<Mooblooms> {
         var flower = moobloom.getMoobloomType().getFlower();
 
         if (flower.equals(FlowerBlockState.PINK_PETALS)) {
-            level.setBlock(pos, flower.getBlockState().setValue(PinkPetalsBlock.AMOUNT,
+            level.setBlock(pos, flower.getBlockState().setValue(FlowerBedBlock.AMOUNT,
                 level.getRandom().nextInt(3) + 1), 2);
         } else if (flower.equals(FlowerBlockState.SUNFLOWER)) {
             ((BlockItem)Items.SUNFLOWER)

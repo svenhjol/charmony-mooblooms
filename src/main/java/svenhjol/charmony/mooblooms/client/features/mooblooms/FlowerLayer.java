@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.world.level.block.DoublePlantBlock;
-import net.minecraft.world.level.block.PinkPetalsBlock;
+import net.minecraft.world.level.block.FlowerBedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import svenhjol.charmony.mooblooms.common.features.mooblooms.FlowerBlockState;
@@ -91,7 +91,7 @@ public class FlowerLayer extends RenderLayer<MoobloomRenderState, MoobloomModel>
         var z = -0.25d;
 
         if (renderState.isPollinated) {
-            state = state.setValue(PinkPetalsBlock.AMOUNT, 4);
+            state = state.setValue(FlowerBedBlock.AMOUNT, 4);
             x = -0.48d;
             z = -0.48d;
         }

@@ -4,7 +4,6 @@ import svenhjol.charmony.core.annotations.FeatureDefinition;
 import svenhjol.charmony.core.base.Mod;
 import svenhjol.charmony.core.base.SidedFeature;
 import svenhjol.charmony.core.enums.Side;
-import svenhjol.charmony.mooblooms.MoobloomsMod;
 
 @FeatureDefinition(side = Side.Common, description = """
     Mooblooms are cow-like mobs that come in a variety of flower types.
@@ -22,6 +21,6 @@ public final class Mooblooms extends SidedFeature {
     }
 
     public static Mooblooms feature() {
-        return MoobloomsMod.instance().sidedFeature(Mooblooms.class);
+        return Mod.getSidedFeature(Mooblooms.class);
     }
 }
