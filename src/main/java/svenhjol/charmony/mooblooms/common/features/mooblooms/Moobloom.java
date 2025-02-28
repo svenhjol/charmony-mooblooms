@@ -78,10 +78,10 @@ public class Moobloom extends Cow implements Shearable {
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
-        setMoobloomType(MoobloomType.fromName(tag.getString(TYPE_TAG)));
+        setMoobloomType(MoobloomType.fromName(tag.getString(TYPE_TAG).orElseThrow()));
 
         if (tag.contains(POLLINATED_TAG)) {
-            setPollinated(tag.getBoolean(POLLINATED_TAG));
+            setPollinated(tag.getBoolean(POLLINATED_TAG).orElseThrow());
         }
     }
 
