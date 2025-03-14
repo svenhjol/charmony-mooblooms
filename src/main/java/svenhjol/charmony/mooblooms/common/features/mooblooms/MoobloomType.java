@@ -2,6 +2,7 @@ package svenhjol.charmony.mooblooms.common.features.mooblooms;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
 import svenhjol.charmony.mooblooms.MoobloomsMod;
 
@@ -62,6 +63,11 @@ public enum MoobloomType {
         }
 
         return ALLIUM;
+    }
+
+    public static MoobloomType random() {
+        var rand = RandomSource.create();
+        return COMMON_TYPES.get(rand.nextInt(COMMON_TYPES.size()));
     }
 
     public static List<MoobloomType> getTypesForPos(LevelAccessor level, BlockPos pos) {
