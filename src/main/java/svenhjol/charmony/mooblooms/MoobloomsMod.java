@@ -9,7 +9,7 @@ import svenhjol.charmony.core.enums.Side;
     id = MoobloomsMod.ID,
     sides = {Side.Client, Side.Common},
     name = "Mooblooms",
-    description = "")
+    description = "Mooblooms are cow-like mobs that come in a variety of flower types. They spawn flowers where they walk and can be milked for suspicious stew.")
 public final class MoobloomsMod extends Mod {
     public static final String ID = "charmony-mooblooms";
     private static MoobloomsMod instance;
