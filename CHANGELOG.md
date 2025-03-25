@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0
+
+- Update for Minecraft 1.21.5.
+
 ## 1.1.1
 
 - Add missing sound and subtitle for milking a moobloom.
