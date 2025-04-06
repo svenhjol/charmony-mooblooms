@@ -21,7 +21,7 @@ public final class Registers extends Setup<Mooblooms> {
 
             registry.modelLayer(() -> adultModel, MoobloomModel::createBodyLayer);
             registry.modelLayer(() -> babyModel, MoobloomModel::createBabyBodyLayer);
-            registry.entityRenderer(common.registers.moobloom, () -> MoobloomRenderer::new);
+            registry.entityRenderer(common.registers.moobloom.get(), MoobloomRenderer::new);
         }
     }
 

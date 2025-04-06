@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.0
+
+- Update for Charmony 1.27.0.
+
 ## 1.4.0
 
 - Update for Minecraft 1.21.5.
