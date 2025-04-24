@@ -5,10 +5,10 @@
       "id": "minecraft:allium"
     },
     "title": {
-      "translate": "advancements.charmony.mooblooms.title"
+      "translate": "advancements.charmony-mooblooms.mooblooms.title"
     },
     "description": {
-      "translate": "advancements.charmony.mooblooms.description"
+      "translate": "advancements.charmony-mooblooms.mooblooms.description"
     },
     "frame": "task",
     "show_toast": false,

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.2
+
+- Standardize advancement namespace.
+
 ## 1.5.0
 
 - Update for Charmony 1.27.0.

@@ -1,14 +1,14 @@
 {
-  "parent": "charmony:mooblooms/milked_moobloom",
+  "parent": "charmony-mooblooms:mooblooms/milked_moobloom",
   "display": {
     "icon": {
       "id": "minecraft:suspicious_stew"
     },
     "title": {
-      "translate": "advancements.charmony.milked_rare_moobloom.title"
+      "translate": "advancements.charmony-mooblooms.milked_rare_moobloom.title"
     },
     "description": {
-      "translate": "advancements.charmony.milked_rare_moobloom.description"
+      "translate": "advancements.charmony-mooblooms.milked_rare_moobloom.description"
     },
     "frame": "challenge",
     "show_toast": true,
