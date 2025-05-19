@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.0
+
+- Update for Charmony and API.
+
 ## 1.5.2
 
 - Standardize advancement namespace.

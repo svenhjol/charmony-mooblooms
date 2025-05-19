@@ -1,7 +1,7 @@
 package svenhjol.charmony.mooblooms.common;
 
 import net.fabricmc.api.ModInitializer;
-import svenhjol.charmony.core.enums.Side;
+import svenhjol.charmony.api.core.Side;
 import svenhjol.charmony.mooblooms.MoobloomsMod;
 import svenhjol.charmony.mooblooms.common.features.mooblooms.Mooblooms;
 
