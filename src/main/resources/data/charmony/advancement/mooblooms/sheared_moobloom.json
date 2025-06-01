@@ -1,14 +1,14 @@
 {
-  "parent": "charmony-mooblooms:root",
+  "parent": "charmony:mooblooms/milked_moobloom",
   "display": {
     "icon": {
-      "id": "minecraft:bowl"
+      "id": "minecraft:shears"
     },
     "title": {
-      "translate": "advancements.charmony-mooblooms.milked_moobloom.title"
+      "translate": "advancements.charmony.sheared_moobloom.title"
     },
     "description": {
-      "translate": "advancements.charmony-mooblooms.milked_moobloom.description"
+      "translate": "advancements.charmony.sheared_moobloom.description"
     },
     "frame": "goal",
     "show_toast": true,
@@ -16,16 +16,16 @@
     "hidden": false
   },
   "criteria": {
-    "milked_moobloom": {
+    "sheared_moobloom": {
       "trigger": "charmony_action_performed",
       "conditions": {
-        "action": "charmony:milked_moobloom"
+        "action": "charmony:sheared_moobloom"
       }
     }
   },
   "requirements": [
     [
-      "milked_moobloom"
+      "sheared_moobloom"
     ]
   ]
 }

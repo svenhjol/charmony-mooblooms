@@ -1,7 +1,6 @@
 package svenhjol.charmony.mooblooms.common.features.mooblooms;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -20,6 +19,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 
 import javax.annotation.Nullable;
 
@@ -69,22 +70,22 @@ public class Moobloom extends Cow implements Shearable {
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag tag) {
-        super.addAdditionalSaveData(tag);
-        tag.putString(TYPE_TAG, getMoobloomType().getName());
-        tag.putBoolean(POLLINATED_TAG, isPollinated());
+    public void addAdditionalSaveData(ValueOutput valueOutput) {
+        super.addAdditionalSaveData(valueOutput);
+
+        valueOutput.putString(TYPE_TAG, getMoobloomType().getName());
+        valueOutput.putBoolean(POLLINATED_TAG, isPollinated());
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag tag) {
-        super.readAdditionalSaveData(tag);
+    public void readAdditionalSaveData(ValueInput valueInput) {
+        super.readAdditionalSaveData(valueInput);
 
-        var type = tag.getString(TYPE_TAG).map(MoobloomType::fromName).orElse(MoobloomType.random());
+        var type = valueInput.getString(TYPE_TAG).map(MoobloomType::fromName).orElse(MoobloomType.random());
         setMoobloomType(type);
 
-        if (tag.contains(POLLINATED_TAG)) {
-            setPollinated(tag.getBoolean(POLLINATED_TAG).orElseThrow());
-        }
+        var pollinated = valueInput.getBooleanOr(POLLINATED_TAG, false);
+        setPollinated(pollinated);
     }
 
     @Override
@@ -102,8 +103,7 @@ public class Moobloom extends Cow implements Shearable {
     }
 
     public void pollinate() {
-        var level = level();
-        level.playSound(null, blockPosition(), SoundEvents.BEE_POLLINATE, SoundSource.NEUTRAL, 1.0f, 1.0f);
+        level().playSound(null, blockPosition(), SoundEvents.BEE_POLLINATE, SoundSource.NEUTRAL, 1.0f, 1.0f);
         setPollinated(true);
     }
 

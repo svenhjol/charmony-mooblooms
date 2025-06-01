@@ -10,7 +10,7 @@
     "svenhjol",
     "Coranthes"
   ],
-  "icon": "assets/charmony-mooblooms/textures/gui/sprites/icon.png",
+  "icon": "assets/charmony/textures/gui/sprites/charmony-mooblooms.png",
   "license": "MIT",
   "environment": "*",
   "accessWidener": "charmony-mooblooms.accesswidener",
@@ -20,9 +20,6 @@
     ],
     "client": [
         "svenhjol.charmony.mooblooms.client.ClientInitializer"
-    ],
-    "modmenu": [
-        "svenhjol.charmony.mooblooms.integration.ModMenuPlugin"
     ]
   },
 

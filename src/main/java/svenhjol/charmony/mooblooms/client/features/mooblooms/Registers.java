@@ -19,8 +19,8 @@ public final class Registers extends Setup<Mooblooms> {
             adultModel = new ModelLayerLocation(feature().id("moobloom"), "main");
             babyModel = new ModelLayerLocation(feature().id("moobloom_baby"), "main");
 
-            registry.modelLayer(() -> adultModel, MoobloomModel::createBodyLayer);
-            registry.modelLayer(() -> babyModel, MoobloomModel::createBabyBodyLayer);
+            registry.modelLayer(adultModel, MoobloomModel::createBodyLayer);
+            registry.modelLayer(babyModel, MoobloomModel::createBabyBodyLayer);
             registry.entityRenderer(common.registers.moobloom.get(), MoobloomRenderer::new);
         }
     }

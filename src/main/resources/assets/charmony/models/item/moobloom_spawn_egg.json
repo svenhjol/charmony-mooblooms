@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "charmony-mooblooms:item/moobloom_spawn_egg"
+    "layer0": "charmony:item/moobloom_spawn_egg"
   }
 }

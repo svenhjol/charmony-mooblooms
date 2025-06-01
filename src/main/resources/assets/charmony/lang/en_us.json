@@ -1,0 +1,13 @@
+{
+  "advancements.charmony.mooblooms.title": "Mooblooms",
+  "advancements.charmony.mooblooms.description": "Mooblooms spawn flowers where they walk and can be milked for suspicious stew.",
+  "advancements.charmony.milked_moobloom.title": "Flower Power",
+  "advancements.charmony.milked_moobloom.description": "Milk a Moobloom and get some suspicious stew",
+  "advancements.charmony.milked_rare_moobloom.title": "Rare Stew",
+  "advancements.charmony.milked_rare_moobloom.description": "Find and milk a rare moobloom",
+  "advancements.charmony.sheared_moobloom.title": "Pruning the Flowers",
+  "advancements.charmony.sheared_moobloom.description": "Use shears on a Moobloom to get a flower",
+  "entity.charmony.moobloom": "Moobloom",
+  "item.charmony.moobloom_spawn_egg": "Moobloom Spawn Egg",
+  "subtitles.charmony.milk_moobloom": "Moobloom milked"
+}

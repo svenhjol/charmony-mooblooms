@@ -13,10 +13,6 @@ public final class Advancements extends Setup<Mooblooms> {
         AdvancementHelper.trigger("milked_moobloom", player);
     }
 
-    public void milkedRareMoobloom(Player player) {
-        AdvancementHelper.trigger("milked_rare_moobloom", player);
-    }
-
     public void shearedMoobloom(Player player) {
         AdvancementHelper.trigger("sheared_moobloom", player);
     }

@@ -4,7 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
-import svenhjol.charmony.mooblooms.MoobloomsMod;
+import svenhjol.charmony.core.Charmony;
 
 import java.util.List;
 
@@ -33,14 +33,10 @@ public enum MoobloomType {
         POPPY, RED_TULIP, WHITE_TULIP
     );
 
-    public final static List<MoobloomType> RARE_TYPES = List.of(
-        SUNFLOWER, CHERRY_BLOSSOM
-    );
-
     MoobloomType(String name, FlowerBlockState flower) {
         this.name = name;
         this.flower = flower;
-        this.texture = MoobloomsMod.id("textures/entity/moobloom/" + name + ".png");
+        this.texture = Charmony.id("textures/entity/moobloom/" + name + ".png");
     }
 
     public FlowerBlockState getFlower() {
